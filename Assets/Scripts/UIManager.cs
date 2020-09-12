@@ -7,26 +7,79 @@ public class UIManager : MonoBehaviour
 {
     public TileManager tileManager;
 
-    public Slider redSlider;
-    public Slider greenSlider;
-    public Slider blueSlider;
-    public Button pencil;
-    public Button picker;
-    public Button eraser;
-    public Image selectedColor;
+    //Tools
+    [SerializeField]
+    private Button pencil;
+    [SerializeField]
+    private Button picker;
+    [SerializeField]
+    private Button eraser;
 
-    SliderManager redScrubber;
-    SliderManager blueScrubber;
-    SliderManager greenScrubber;
-    public List<SliderManager> scrubs = new List<SliderManager>();
-    bool isScrubberSelectedPrev;
+    //Colors
+    [SerializeField]
+    private Image primaryColorImage;
+    [SerializeField]
+    private Image secondaryColorImage;
+    [SerializeField]
+    public Button primaryColorButton;
+    [SerializeField]
+    public Button secondaryColorButton;
+
+    private Color primaryColor = Color.black;
+    private Color secondaryColor = Color.white;
+
+    //Sliders
+    [SerializeField]
+    private Slider redSlider;
+    [SerializeField]
+    private Slider greenSlider;
+    [SerializeField]
+    private Slider blueSlider;
+    private SliderManager redScrubber;
+    private SliderManager blueScrubber;
+    private SliderManager greenScrubber;
 
     [SerializeField]
-    private Color currentColor = Color.white;
-    public Color CurrentColor {
-        get { return currentColor; }
+    public List<SliderManager> scrubs = new List<SliderManager>();
+    bool isScrubberSelectedPrev;
+    [SerializeField]
+    bool isPrimaryColor = true;
+
+    public Image ColorImage {
+        get {
+            if (isPrimaryColor) {
+                return primaryColorImage;
+            }
+            else {
+                return secondaryColorImage;
+            }
+        }
         set {
-            currentColor = value;
+            if (isPrimaryColor) {
+                primaryColorImage = value;
+            }
+            else {
+                secondaryColorImage = value;
+            }
+        }
+    }
+
+    public Color CurrentColor {
+        get {
+            if (isPrimaryColor) {
+                return primaryColor;
+            }
+            else {
+                return secondaryColor;
+            }
+        }
+        set {
+            if (isPrimaryColor) {
+                primaryColor = value;
+            }
+            else {
+                secondaryColor = value;
+            }
             ColorPreview();
             if(CurrentTool == Tool.Picker) {
                 UpdateSliders();
@@ -61,6 +114,8 @@ public class UIManager : MonoBehaviour
         redSlider.onValueChanged.AddListener(delegate { SlideColor(); });
         greenSlider.onValueChanged.AddListener(delegate { SlideColor(); });
         blueSlider.onValueChanged.AddListener(delegate { SlideColor(); });
+        primaryColorButton.onClick.AddListener(delegate { SetPrimaryColor(); });
+        secondaryColorButton.onClick.AddListener(delegate { SetSecondaryColor(); });
         CurrentColor = Color.black;
     }
 
@@ -81,9 +136,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void SetPrimaryColor() {
+        isPrimaryColor = true;
+        UpdateSliders();
+    }
+
+    public void SetSecondaryColor() {
+        isPrimaryColor = false;
+        UpdateSliders();
+    }
+
     public void ColorPreview() {
         Debug.Log("Color Preview!");
-        selectedColor.color = CurrentColor;
+        ColorImage.color = CurrentColor;
     }
 
     public void ColorPencil() {

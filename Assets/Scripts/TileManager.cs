@@ -9,7 +9,8 @@ public class TileManager : MonoBehaviour {
     private int cols = 8;
     [SerializeField]
     private float tileSize = 1;
-
+    [SerializeField]
+    private List<Vector2> vectors = new List<Vector2>();
     //public GameObject uiManager = new GameObject();
 
     public List<GameObject> tiles = new List<GameObject>();
@@ -34,6 +35,8 @@ public class TileManager : MonoBehaviour {
                 tile.name = nameIndex.ToString();
                 nameIndex++;
                 tiles.Add(tile);
+                Vector2 vect = new Vector2(row, col);
+                vectors.Add(vect);
             }
         }
         Destroy(referenceTile);
