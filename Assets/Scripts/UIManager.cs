@@ -136,14 +136,29 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ColorToggler() {
+        GameObject primaryToggle = primaryColorButton.transform.Find("PrimaryToggle").gameObject;
+        GameObject secondaryToggle = secondaryColorButton.transform.Find("SecondaryToggle").gameObject;
+        if (isPrimaryColor) {
+            primaryToggle.SetActive(true);
+            secondaryToggle.SetActive(false);
+        }
+        else {
+            primaryToggle.SetActive(false);
+            secondaryToggle.SetActive(true);
+        }
+    }
+
     public void SetPrimaryColor() {
         isPrimaryColor = true;
         UpdateSliders();
+        ColorToggler();
     }
 
     public void SetSecondaryColor() {
         isPrimaryColor = false;
         UpdateSliders();
+        ColorToggler();
     }
 
     public void ColorPreview() {

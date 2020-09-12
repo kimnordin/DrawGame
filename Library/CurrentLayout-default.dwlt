@@ -368,20 +368,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Kim\Documents\UnityProjects\Draw
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 163a0000
-    m_LastClickedID: 14870
-    m_ExpandedIDs: 00000000163a000000ca9a3b
+    m_SelectedIDs: 3a3a0000
+    m_LastClickedID: 14906
+    m_ExpandedIDs: 000000002e3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -409,7 +409,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000163a0000
+    m_ExpandedIDs: 000000002e3a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 22250000ce240000fc24000004250000ec240000f42400000c250000142500001c250000342500003c250000242500002c2500004c25000054250000442500006c2500009c250000d4260000ea250000da250000e2250000de250000e62500009e0600004c24000098260000a82600004a240000302400002e2500004a2500004e2500004625000000250000a8330000c63d0000d43d000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -532,9 +532,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 9c2f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 5efbffffd43800000a3900002e3900005039000096390000b2390000ce390000
+      m_ExpandedIDs: 5efbffff183900003c390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -594,9 +594,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 257.71796, y: 800.0702, z: -37.644638}
+    m_Target: {x: 657.2228, y: 753.0442, z: -313.26886}
     speed: 2
-    m_Value: {x: 267.32712, y: 796.9871, z: -36.515324}
+    m_Value: {x: 257.71796, y: 800.0702, z: -37.644638}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -646,9 +646,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 299.44443
+    m_Target: 453.23938
     speed: 2
-    m_Value: 313.55438
+    m_Value: 299.44443
   m_Ortho:
     m_Target: 1
     speed: 2
