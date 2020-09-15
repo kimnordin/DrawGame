@@ -201,6 +201,20 @@ public class UIManager : MonoBehaviour
         blueSlider.value = CurrentColor.b;
     }
 
+
+    public void Play() {
+        Debug.Log("play");
+        List<GameObject> tiles = tileManager.tiles;
+        foreach(GameObject tile in tiles.ToArray()) {
+            if(tile.GetComponent<SpriteRenderer>().color == Color.white) {
+                tiles.Remove(tile);
+                Destroy(tile);
+            }
+            else { 
+}
+        }
+        tileManager.tiles = tiles;
+    }
     // Start is called before the first frame update
 
 }
